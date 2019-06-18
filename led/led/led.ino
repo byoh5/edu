@@ -41,7 +41,8 @@ void loop() {
   //  Serial.print("ran-");
   //  Serial.println(val);
 
-  while (!(((val == 2) && (sw1 == 0)) || ((val == 3) && (sw2 == 0)) || ((val == 4) && (sw3 == 0)))) {
+  while (!(((val == 2) && (sw1 == 0)) || ((val == 3) && (sw2 == 0)) || ((val == 4) && (sw3 == 0))) \       
+   || ((sw1==0)&&(sw2==0)&&(sw3==0))) {
     if ( millis() > TIME_LIMIT) {
       break;
     }
@@ -61,7 +62,7 @@ void loop() {
     Serial.print("Cnt-");
     Serial.print(cnt);
     Serial.print(" time-");
-    Serial.print(last);
+    Serial.println(last);
 
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
